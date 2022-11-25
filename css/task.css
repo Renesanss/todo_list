@@ -1,0 +1,29 @@
+.task__button {
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(348, 83%, 47%);
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    border: none;
+    margin: 0;
+  }
+  
+  .task__button--toggleDone {
+    background-color: hsl(120, 61%, 34%);
+  }
+  
+  .task__button--toggleDone:hover {
+    background-color: hsl(120, 61%, 39%);
+  }
+  
+  .task__button--toggleDone:active {
+    background-color: hsl(120, 61%, 44%);
+  }
+  
+  .task__button--remove:hover {
+    background-color: hsl(348, 83%, 52%);
+  }
+  
+  .task__button--remove:active {
+    background-color: hsl(348, 83%, 57%);
+  }
