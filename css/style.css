@@ -6,3 +6,6 @@ html {
     box-sizing: inherit;
 }
 
+.list__item--done {
+text-decoration: line-through
+}

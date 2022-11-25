@@ -53,7 +53,8 @@ toggleTaskDone(index);
 
         for (const task of tasks) {
             htmlString += `
-             <li${task.done ? " style=\"text-decoration: line-through\"" : ""}>
+             <li
+             class= "list__item${task.done ? " list__item--done" : ""}">
              <button class="js-done">zrobione</button>
              <button class="js-remove">usuń</button>
                 ${task.content}
