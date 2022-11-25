@@ -27,3 +27,19 @@
   .task__button--remove:active {
     background-color: hsl(348, 83%, 57%);
   }
+
+  .taskContent {
+    margin: 10px;
+  }
+  
+  .taskContent--done {
+    text-decoration: line-through;
+  }
+  
+  .tasksList {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    margin: 10px;
+    border-bottom: solid 1px hsl(0, 0%, 94%);
+    align-items: center;
+  }
