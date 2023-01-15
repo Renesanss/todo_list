@@ -31,6 +31,19 @@
 		render();
 	};
 
+	const markAllTasksDone = () => {
+		tasks = tasks.map((task) => ({
+...tasks,
+done:true,
+		}));
+		render();
+	};
+
+const toggleHideDoneTasks = () => {
+	hideDoneTasks = !hideDoneTasks;
+	render();
+};
+
 	const bindRemoveEvents = () => {
 		const removeButtons = document.querySelectorAll(".js-remove");
 
@@ -52,12 +65,9 @@
 	};
 
 	const renderTasks = () => {
-		let tasksListHTMLContent = "";
-
-	for (const task of tasks) {
-		tasksListHTMLContent += `
-			<li 
-			class="tasks__item js-task">	 
+		const taskToHTML = task => `
+			<li class="
+			tasks__item${task.done && hideDoneTasks ? "tasks__item--hidden" : ""} js-task">	 
 			<button class="tasks__button tasks__button--toggleDone js-toggleDone">
 						${task.done ? "&#10004" : ""}
 					</button>
@@ -69,11 +79,16 @@
 					</button> 
 			</li>
 			`;
-	}
+			const tasksElement = document.querySelector(".js-tasks");
+			tasksElement.innerHTML = tasks.map(taskToHTML).join("");
+	};
 
-	document.querySelector(".js-tasks").innerHTML = tasksListHTMLContent;};
+	
 
-	const renderButtons = () => {};
+	const renderButtons = () => {
+		const buttonsElement = document.querySelector(".js-buttons");
+
+	};
 
 	const bindButtonsEvents = () => {}
 
