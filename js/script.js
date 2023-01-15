@@ -36,30 +36,39 @@
 		});
 	};
 
-	const render = () => {
+	const renderTasks = () => {
 		let tasksListHTMLContent = "";
 
-		for (const task of tasks) {
-			tasksListHTMLContent += `
-				<li 
-				class="tasks__item js-task">	 
-        		<button class="tasks__button tasks__button--toggleDone js-toggleDone">
-							${task.done ? "&#10004" : ""}
-						</button>
-       			<span class="tasks__content${ task.done ? " tasks__content--done" : ""}">
-							${task.content} 
-						</span>
-       			<button class="tasks__button tasks__button--remove js-remove">
-			   			<i class="fa">&#xf014;</i>
-						</button> 
-				</li>
-				`;
-		}
+	for (const task of tasks) {
+		tasksListHTMLContent += `
+			<li 
+			class="tasks__item js-task">	 
+			<button class="tasks__button tasks__button--toggleDone js-toggleDone">
+						${task.done ? "&#10004" : ""}
+					</button>
+			   <span class="tasks__content${ task.done ? " tasks__content--done" : ""}">
+						${task.content} 
+					</span>
+			   <button class="tasks__button tasks__button--remove js-remove">
+					   <i class="fa">&#xf014;</i>
+					</button> 
+			</li>
+			`;
+	}
 
-		document.querySelector(".js-tasks").innerHTML = tasksListHTMLContent;
+	document.querySelector(".js-tasks").innerHTML = tasksListHTMLContent;};
+
+	const renderButtons = () => {};
+
+	const bindButtonsEvents = () => {}
+
+	const render = () => {
+		renderTasks();
+		renderButtons();
 
 		bindRemoveEvents();
 		bindToggleDoneEvents();
+		bindButtonsEvents();
 	};
 
 	const onFormSubmit = (event) => {
